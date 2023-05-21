@@ -1,0 +1,15 @@
+FROM ubuntu:latest
+
+RUN apt-get update && \
+ apt-get install -y gcc
+
+WORKDIR /app/server
+
+COPY server/*.c server/
+COPY server/*.h server/
+
+# Build the server
+RUN mkdir /app/build \
+ && gcc -o /app/build/server server.c request_handler.c file_handler.c
+
+CMD ["/app/build/server"]
