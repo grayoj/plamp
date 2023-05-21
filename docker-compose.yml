@@ -1,0 +1,30 @@
+version: '3'
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: dockerfile
+    ports:
+      - 8080:8080
+    volumes:
+      - ./server:/app/server
+      - ./build:/app/build
+    depends_on:
+      - store
+
+  store:
+    build:
+      context: ./store
+      dockerfile: dockerfile
+    volumes:
+      - ./store:/app/store
+      - ./build:/app/build
+
+  php:
+    build:
+      context: ./php
+      dockerfile: dockerfile
+    ports:
+      - 8000:8000
+    volumes:
+      - ./php:/app/php
