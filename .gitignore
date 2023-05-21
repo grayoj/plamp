@@ -1,0 +1,42 @@
+# Ignore build artifacts
+/build
+
+# Ignore logs and temporary files
+/logs
+/tmp
+
+# Ignore compiled binaries
+*.exe
+*.out
+
+# Ignore editor and IDE specific files
+.idea/
+.vscode/
+
+# Ignore system and OS files
+.DS_Store
+Thumbs.db
+
+# Ignore environment-specific files
+.env
+
+# Ignore generated files
+/generated
+
+# Ignore user-specific configuration files
+/config/user.config
+
+# Ignore backup files
+*.bak
+*.backup
+
+# Ignore sensitive information
+/secrets
+
+/test-results
+/coverage
+
+# Ignore Docker artifacts
+.dockerignore
+.docker/
+.docker-compose.yml
