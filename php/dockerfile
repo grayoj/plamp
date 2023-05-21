@@ -1,0 +1,10 @@
+FROM ubuntu:latest
+
+WORKDIR /app/php
+
+# Install PHP and other necessary deps
+RUN apt-get update && apt-get install -y php
+
+COPY php/*.php php/
+
+CMD ["php", "-S", "0.0.0.0:8000", "-t", "/app/php"]
